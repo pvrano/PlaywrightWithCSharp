@@ -444,3 +444,5 @@ C:\Users\pvran\source\repos\MakeMyTrip\MakeMyTrip\obj\Debug\net8.0\refint\MakeMy
 C:\Users\pvran\source\repos\MakeMyTrip\MakeMyTrip\obj\Debug\net8.0\MakeMyTrip.pdb
 C:\Users\pvran\source\repos\MakeMyTrip\MakeMyTrip\obj\Debug\net8.0\MakeMyTrip.genruntimeconfig.cache
 C:\Users\pvran\source\repos\MakeMyTrip\MakeMyTrip\obj\Debug\net8.0\ref\MakeMyTrip.dll
+C:\Users\pvran\source\repos\MakeMyTrip\MakeMyTrip\obj\Debug\net8.0\MakeMyTrip.sourcelink.json
+C:\Users\pvran\source\repos\MakeMyTrip\MakeMyTrip\bin\Debug\net8.0\NLog.dll

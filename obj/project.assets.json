@@ -395,6 +395,19 @@
           }
         }
       },
+      "NLog/5.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NLog.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "NuGet.Frameworks/6.5.0": {
         "type": "package",
         "compile": {
@@ -1419,6 +1432,30 @@
         "packageIcon.png"
       ]
     },
+    "NLog/5.5.0": {
+      "sha512": "FCH8s7GWlonH5JXV9/EpeNJ8pRZQMVZOSWX3JrHPU8rzdHJhS5+lUGGvJIUOtzkGV1clYBFR0WXOI5FnUwVCMA==",
+      "type": "package",
+      "path": "nlog/5.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "N.png",
+        "lib/net35/NLog.dll",
+        "lib/net35/NLog.xml",
+        "lib/net45/NLog.dll",
+        "lib/net45/NLog.xml",
+        "lib/net46/NLog.dll",
+        "lib/net46/NLog.xml",
+        "lib/netstandard1.3/NLog.dll",
+        "lib/netstandard1.3/NLog.xml",
+        "lib/netstandard1.5/NLog.dll",
+        "lib/netstandard1.5/NLog.xml",
+        "lib/netstandard2.0/NLog.dll",
+        "lib/netstandard2.0/NLog.xml",
+        "nlog.5.5.0.nupkg.sha512",
+        "nlog.nuspec"
+      ]
+    },
     "NuGet.Frameworks/6.5.0": {
       "sha512": "QWINE2x3MbTODsWT1Gh71GaGb5icBz4chS8VYvTgsBnsi8esgN6wtHhydd7fvToWECYGq7T4cgBBDiKD/363fg==",
       "type": "package",
@@ -1727,6 +1764,7 @@
       "Microsoft.NET.Test.Sdk >= 17.8.0",
       "Microsoft.Playwright >= 1.52.0",
       "Microsoft.Playwright.NUnit >= 1.52.0",
+      "NLog >= 5.5.0",
       "NUnit >= 3.14.0",
       "NUnit.Analyzers >= 3.9.0",
       "NUnit3TestAdapter >= 4.5.0",
@@ -1778,7 +1816,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -1795,6 +1833,10 @@
           "Microsoft.Playwright.NUnit": {
             "target": "Package",
             "version": "[1.52.0, )"
+          },
+          "NLog": {
+            "target": "Package",
+            "version": "[5.5.0, )"
           },
           "NUnit": {
             "target": "Package",
@@ -1829,7 +1871,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300-preview.0.25177.5/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
