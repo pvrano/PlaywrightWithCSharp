@@ -3,14 +3,48 @@
 ## Overview
 This project is an automated test suite for the MakeMyTrip website, focusing on the scenario of searching for flights. The tests are written in C# using the Playwright framework, which enables browser automation for end-to-end testing.
 
+## Project Structure
+```
+MakeMyTrip/
+├── MakeMyTrip.cs
+├── MakeMyTrip.csproj
+├── MakeMyTrip.sln
+├── Models/
+│   └── HomePage.cs
+├── NewTestClass.cs
+├── UnitTest1.cs
+├── screenshots/
+├── videos/
+└── ...
+```
+
+## Playwright PageTest Usage
+The test classes `NewTestClass` and `UnitTest1` both inherit from Playwright’s `PageTest` class. This provides built-in support for launching browsers in headless mode, managing browser contexts, and simplifying test setup/teardown. In `NewTestClass`, the `PageTest` base is used for advanced features like ARIA snapshot testing, while in `UnitTest1` it is used for basic navigation and assertions.
+
+## Trace Viewer and Video Logging
+This project leverages Playwright’s advanced logging features:
+- **Trace Viewer**: Tracing is enabled in the test code to capture screenshots, DOM snapshots, and source files during test execution. The trace is saved as a `.zip` file and can be viewed using Playwright’s trace viewer for debugging and analysis.
+- **Video Logging**: Browser contexts are configured to record videos of test runs. Videos are saved in the `videos/` directory, allowing you to review the test execution visually.
+
+## Playwright Methods (Commented for Future Use)
+Several Playwright methods are included in the code but commented out for future reference. These include:
+- HTTP authentication for browser contexts
+- Handling popups and dialogs
+- Working with frames
+- Capturing screenshots of specific locators
+- Downloading and uploading files
+- Advanced assertions and element interactions
+
+These commented sections serve as a guide for extending the test suite with more complex scenarios.
+
 ## Playwright Locators
-Playwright locators are a powerful way to identify and interact with elements on a web page. They allow you to select elements using CSS selectors, text, roles, and more. In this project, Playwright locators are (or will be) used to:
+Playwright locators are a powerful way to identify and interact with elements on a web page. They allow you to select elements using CSS selectors, text, roles, and more. In this project, Playwright locators are used to:
 - Identify input fields for source and destination cities
 - Select dates from the calendar
 - Click the search button
 - Validate the appearance of flight results
 
-Example usage (to be implemented in your test class):
+Example usage:
 ```csharp
 var sourceInput = page.Locator("input[placeholder='From']");
 var destinationInput = page.Locator("input[placeholder='To']");
@@ -38,6 +72,31 @@ The main scenario automated in this project is searching for a flight. The steps
    ```powershell
    dotnet test
    ```
+
+## How to View Playwright Trace Files
+
+After running your tests, a `trace.zip` file is generated in the output directory. You can use Playwright's trace viewer to open and analyze this file.
+
+### Steps to Open `trace.zip` Using PowerShell
+1. Open PowerShell and navigate to the directory containing your `trace.zip` file:
+   ```powershell
+   cd "c:\Users\pvran\source\repos\MakeMyTrip\MakeMyTrip\bin\Debug\net8.0"
+   ```
+2. Run the Playwright trace viewer:
+   ```powershell
+   pwsh .\playwright.ps1 show-trace trace.zip
+   ```
+   Or, if you have Playwright installed globally via npm, you can use:
+   ```powershell
+   npx playwright show-trace trace.zip
+   ```
+
+### If `playwright.ps1` Does Not Run
+If you encounter issues running `playwright.ps1`, use the following PowerShell command:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+```
+This will open the trace viewer in your default browser for interactive debugging.
 
 ---
 Feel free to expand the test scenarios and add more details as your automation suite grows.

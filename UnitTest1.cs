@@ -1,16 +1,24 @@
-﻿namespace MakeMyTrip
+﻿using Microsoft.Playwright;
+using Microsoft.Playwright.NUnit;
+
+namespace MakeMyTrip
 {
-    public class Tests
+    public class Tests : PageTest
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
+        [SetUp]     
+        public async Task SetUp()
+            {
+               
+            }
+
 
         [Test]
-        public void Test1()
+        public async Task Test1()
         {
-            Assert.Pass();
+            await Page.GotoAsync("https://www.makemytrip.com");
+            Console.WriteLine("Logged in to makemytrip");
+            await Expect(Page).ToHaveTitleAsync("Online Courses - Learn Anything, On Your Schedule | Udemy");
+            Console.WriteLine("Test Passed");
         }
     }
 }

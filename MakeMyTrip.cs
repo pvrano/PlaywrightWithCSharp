@@ -1,17 +1,7 @@
 ﻿using Microsoft.Playwright;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Microsoft.Playwright.NUnit;
-using NUnit.Framework;
 using NUnit.Framework.Internal;
-using NLog;
 
-namespace PlaywrightTesting.TestCases
+namespace MakeMyTrip
 {
     [TestFixture]
     public class MakeMyTrip 
@@ -29,7 +19,20 @@ namespace PlaywrightTesting.TestCases
                 Headless = false,
             });
 
-            var context = await browser.NewContextAsync();
+           // code to launch browser context with video recording of the tests
+
+            var context = await browser.NewContextAsync(new()
+            {
+                RecordVideoDir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent + "\\videos"
+            });
+
+            await context.Tracing.StartAsync(new TracingStartOptions
+            {
+                Screenshots = true,
+                Snapshots = true,
+                Sources = true
+            });
+
 
             //Code to authenticate in http
             /*var context = await browser.NewContextAsync(new BrowserNewContextOptions
@@ -41,14 +44,14 @@ namespace PlaywrightTesting.TestCases
                 }
 
             });*/
-            
+
 
             var page = await context.NewPageAsync();
 
 
             await page.GotoAsync("https://www.makemytrip.com/");
 
-
+            
             //right click code through mouse actions
             await page.Locator("//*[@id='SW']/div[3]/div/div/a[1]").ClickAsync(new LocatorClickOptions
             {
@@ -136,6 +139,13 @@ namespace PlaywrightTesting.TestCases
             Console.WriteLine(rootPath);
             string Path = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent+"\\screenshots\\";
             Console.WriteLine(Path);
+
+            await context.Tracing.StopAsync(new TracingStopOptions
+            {
+                Path = "C:\\Users\\pvran\\source\\repos\\MakeMyTrip\\MakeMyTrip\\bin\\Debug\\net8.0\\trace.zip"
+            });
+
+            await context.CloseAsync();
 
 
         }
