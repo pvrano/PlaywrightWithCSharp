@@ -3,7 +3,7 @@ using Microsoft.Playwright.NUnit;
 
 namespace MakeMyTrip
 {
-    public class Tests : PageTest
+    public class ReachingMMTInHeadlessMode : PageTest
     {
         [SetUp]     
         public async Task SetUp()
@@ -11,7 +11,7 @@ namespace MakeMyTrip
                
             }
 
-
+         //this test method will fail since makemytrip does not allow headless mode rowser automation
         [Test]
         public async Task Test1()
         {
