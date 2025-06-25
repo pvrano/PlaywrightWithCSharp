@@ -2,9 +2,11 @@ using Microsoft.Playwright;
 
 namespace MakeMyTrip
 {
+    //Example of using PageTest class for launching browser in the headless mode and directly running the automation using Page class object.
     [TestFixture]
-    public class NewTestClass : Microsoft.Playwright.NUnit.PageTest
+    public class ExampleOfPageTestClass : Microsoft.Playwright.NUnit.PageTest
     {
+        //this test will capture the snapshot of a section in the webpage in the headless mode, if the website disregards headless browser automation then this test will fail
         [Test]
         public async Task TestAriaSnapshot()
         {

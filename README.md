@@ -9,9 +9,7 @@ MakeMyTrip/
 ├── MakeMyTrip.cs
 ├── MakeMyTrip.csproj
 ├── MakeMyTrip.sln
-├── Models/
-│   └── HomePage.cs
-├── NewTestClass.cs
+├── ExampleOfPageTestClass.cs
 ├── UnitTest1.cs
 ├── screenshots/
 ├── videos/
@@ -80,7 +78,7 @@ After running your tests, a `trace.zip` file is generated in the output director
 ### Steps to Open `trace.zip` Using PowerShell
 1. Open PowerShell and navigate to the directory containing your `trace.zip` file:
    ```powershell
-   cd "c:\Users\pvran\source\repos\MakeMyTrip\MakeMyTrip\bin\Debug\net8.0"
+   cd "*\MakeMyTrip\MakeMyTrip\bin\Debug\net8.0"
    ```
 2. Run the Playwright trace viewer:
    ```powershell
