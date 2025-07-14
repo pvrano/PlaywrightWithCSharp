@@ -17,7 +17,20 @@ MakeMyTrip/
 ```
 
 ## Playwright PageTest Usage
-The test classes `NewTestClass` and `UnitTest1` both inherit from Playwright’s `PageTest` class. This provides built-in support for launching browsers in headless mode, managing browser contexts, and simplifying test setup/teardown. In `NewTestClass`, the `PageTest` base is used for advanced features like ARIA snapshot testing, while in `UnitTest1` it is used for basic navigation and assertions.
+The test classes `ExampleOfPageTestClass` and `ReachingMMTINHeadlessMode` both inherit from Playwright’s `PageTest` class. This provides built-in support for launching browsers in headless mode, managing browser contexts, and simplifying test setup/teardown. In `ExampleOfPageTestClass`, the `PageTest` base is used for advanced features like ARIA snapshot testing, while in `ReachingMMTINHeadlessMode` it is used for basic navigation and assertions.
+
+## Playwright Codegen for Initial Automation Setup
+This project leveraged Playwright's `codegen` functionality to quickly generate the initial automation code. By using `codegen`, I was able to:
+- Rapidly define the workflow for automating the flight search scenario
+- Automatically discover and record selectors for web elements during manual interaction
+- Speed up the initial setup of the test suite
+
+After generating the base code with `codegen`, I customized the scripts to fit my test design requirements. This included refining workflows, improving assertions, and re-editing selectors when tests failed due to changes in the website or element behavior. The use of `codegen` made the process much faster and more efficient, especially for:
+- Quickly identifying and interacting with dynamic web elements
+- Reducing manual effort in writing selectors
+- Providing a solid starting point for further test development
+
+Overall, Playwright's codegen was instrumental in accelerating the initial development and troubleshooting phases of this automation project.
 
 ## Trace Viewer and Video Logging
 This project leverages Playwright’s advanced logging features:
